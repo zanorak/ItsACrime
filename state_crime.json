@@ -1,5 +1,4 @@
-var crimeData = 
-[
+var crimeData = [
   {
     "State": "Alabama",
     "Year": 1960,
@@ -115255,4 +115254,4 @@ var crimeData =
       }
     }
   }
-]
+];

@@ -36,6 +36,7 @@
     <div class="tab-pane fade show active mt-3" id="About" role="tabpanel"> 
       <div class="container-lg">
         <div class="accordion" id="AboutTheData">
+
           <div class="accordion-item">
             <h2 class="accordion-header" id="JSON">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cJSON">
@@ -52,6 +53,7 @@
               </div>
             </div>
           </div>
+
           <div class="accordion-item">
             <h2 class="accordion-header" id="Source">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cSource">
@@ -66,6 +68,7 @@
               </div>
             </div>
           </div>
+
           <div class="accordion-item">
             <h2 class="accordion-header" id="UCR">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cUCR">
@@ -82,6 +85,7 @@
               </div>
             </div>
           </div>
+
           <div class="accordion-item">
             <h2 class="accordion-header" id="Categories">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cCategories">
@@ -101,17 +105,20 @@
           </div>
 
           <div class="accordion-item">
-            <h2 class="accordion-header" id="Data Anomolies">
+            <h2 class="accordion-header" id="Anomolies">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cAnomolies">
                 Data Anomolies
               </button>
             </h2>
             <div id="cAnomolies" class="accordion-collapse collapse" data-bs-parent="#AboutTheData">
               <div class="accordion-body">
-                <p>There seems to be some anomolous data in the years 2013, 2014, and 2015. Sometimes it looks right, sometimes it's way too high and sometimes it's too low.
+                <p>There seems to be some bad data in the dataset. For the years 2013, 2014, and 2015 the values 
+                are often too large or too small to fit with the rest of the data. I cannot find anything on the 
+                CORGIS website about it or though a general Google search.
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -128,14 +135,12 @@
               <select class="form-select" id="crimeSelect" aria-label="Type of Crime">
                 <option selected>Type of Crime</option>
                 <optgroup label="Property">
-                  <!-- <option class="disabled text-muted" value="Property">Property</option> -->
                   <option value="pAll">&nbsp;All</option>
                   <option value="pBurglary">&nbsp;Burglary</option>
                   <option value="pLarceny">&nbsp;Larceny</option>
                   <option value="pMotor">&nbsp;Motor</option>
                 </optgroup>
                 <optgroup label="Violent">
-                  <!-- <option class="disabled text-muted" value="Violent">Violent</option> -->
                   <option value="vAll">&nbsp;All</option>
                   <option value="vAssault">&nbsp;Assault</option>
                   <option value="vMurder">&nbsp;Murder</option>
@@ -145,7 +150,7 @@
               </select>
             </div>
             <div class="col-3">
-              <button id="rateGraph" type="submit" class="btn btn-primary mb-3">Graph</button>
+              <button id="rateGraph" type="button" class="btn btn-primary mb-3">Graph</button>
             </div>
           </div>
         </form>
@@ -169,14 +174,12 @@
               <select class="form-select" id="crimeSelect2" aria-label="Type of Crime">
                 <option selected>Type of Crime</option>
                 <optgroup label="Property">
-                  <!-- <option class="disabled text-muted" value="Property">Property</option> -->
                   <option value="pAll">&nbsp;All</option>
                   <option value="pBurglary">&nbsp;Burglary</option>
                   <option value="pLarceny">&nbsp;Larceny</option>
                   <option value="pMotor">&nbsp;Motor</option>
                 </optgroup>
                 <optgroup label="Violent">
-                  <!-- <option class="disabled text-muted" value="Violent">Violent</option> -->
                   <option value="vAll">&nbsp;All</option>
                   <option value="vAssault">&nbsp;Assault</option>
                   <option value="vMurder">&nbsp;Murder</option>
@@ -186,7 +189,7 @@
               </select>
             </div>
             <div class="col-3">
-              <button id="compareGraph" type="submit" class="btn btn-primary mb-3">Graph</button>
+              <button id="compareGraph" type="button" class="btn btn-primary mb-3">Graph</button>
             </div>
           </div>
         </form>

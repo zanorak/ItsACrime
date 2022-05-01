@@ -27,6 +27,12 @@ function drawRateGraph() {
   // get the state choice
   var thisState = $("#stateSelect").children("option:selected").val();
   var thisCrime = $("#crimeSelect").children("optgroup").children("option:selected").val();
+
+  if ( ( thisState == 'Choose State') || ( thisCrime == undefined ) ) {
+    alert("Please choose a state and a crime");
+    return 0;
+  }
+
   var pv = thisCrime.charAt(0);
   thisCrime = thisCrime.substring(1);
 
@@ -56,21 +62,20 @@ function drawRateGraph() {
   const rateChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: labels,
-        datasets: [{
-            label: thisState + ' ' + thisCrime + ' rate per 100,000',
-            data: data,
-            borderWidth: 1,
-            borderColor: 'red',
-            pointRadius: 3,
-            pointBackgroundColor: 'red',
-          }]
+      labels: labels,
+      datasets: [{
+        label: thisState + ' ' + thisCrime + ' rate per 100,000',
+        data: data,
+        borderWidth: 1,
+        borderColor: 'red',
+        pointRadius: 3,
+        pointBackgroundColor: 'red',
+      }]
     },
     options: {
       responsive: true,
     },
   });
-  rateChart.update();
 };
 
 
@@ -79,6 +84,12 @@ function drawCompareGraph() {
   var thisState1 = $("#stateSelect1").children("option:selected").val();
   var thisState2 = $("#stateSelect2").children("option:selected").val();
   var thisCrime = $("#crimeSelect2").children("optgroup").children("option:selected").val();
+
+  if ( ( thisState1 == 'Choose State') || ( thisState2 == 'Choose State') || ( thisCrime == undefined ) ) {
+    alert("Please choose two states and a crime");
+    return 0;
+  }
+
   var pv = thisCrime.charAt(0);
   thisCrime = thisCrime.substring(1);
 
@@ -117,33 +128,31 @@ function drawCompareGraph() {
   }
 
   const ctx = document.getElementById('crimeCompareChart');
-  const rateChart = new Chart(ctx, {
+  const compareChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: labels,
-        datasets: [
-          {
-            label: thisState1 + ' ' + thisCrime + ' rate per 100,000',
-            data: data1,
-            borderWidth: 1,
-            borderColor: 'red',
-            pointRadius: 3,
-            pointBackgroundColor: 'red',
-          },
-          {
-            label: thisState2 + ' ' + thisCrime + ' rate per 100,000',
-            data: data2,
-            borderWidth: 1,
-            borderColor: 'blue',
-            pointRadius: 3,
-            pointBackgroundColor: 'blue',
-          },
-        
-        ]
+      labels: labels,
+      datasets: [
+        {
+          label: thisState1 + ' ' + thisCrime + ' rate per 100,000',
+          data: data1,
+          borderWidth: 1,
+          borderColor: 'red',
+          pointRadius: 3,
+          pointBackgroundColor: 'red',
+        },
+        {
+          label: thisState2 + ' ' + thisCrime + ' rate per 100,000',
+          data: data2,
+          borderWidth: 1,
+          borderColor: 'blue',
+          pointRadius: 3,
+          pointBackgroundColor: 'blue',
+        },
+      ],
     },
     options: {
       responsive: true,
     },
   });
-  rateChart.update();
-}
+};
